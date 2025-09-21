@@ -56,3 +56,19 @@ void blur(unsigned char *out, const unsigned char *in, const int width, const in
         out[row * width + col] = static_cast<unsigned char>(pixel_value / pixels);
     }
 }
+
+__global__
+void matrix_multiplication(const float *M, const float *N, float *P, const int width) {
+    int col = threadIdx.x + blockIdx.x * blockDim.x;
+    int row = threadIdx.y + blockIdx.y * blockDim.y;
+
+    if (col < width && row < width) {
+        float P_value {0.f};
+
+        for (int k {0}; k < width; ++k) {
+            P_value += M[row * width + k] * N[k * width + col];
+        }
+
+        P[row * width + col] = P_value;
+    }
+}

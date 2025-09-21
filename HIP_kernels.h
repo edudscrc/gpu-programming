@@ -1,6 +1,7 @@
 #ifndef HIP_KERNELS_H
 #define HIP_KERNELS_H
 
+#include <__clang_hip_runtime_wrapper.h>
 #include <hip/hip_runtime.h>
 
 __global__
@@ -11,5 +12,8 @@ void convert_rgb_to_grayscale(unsigned char *out, const unsigned char *in, const
 
 __global__
 void blur(unsigned char *out, const unsigned char *in, const int width, const int height);
+
+__global__
+void matrix_multiplication(const float *M, const float *N, float *P, const int width);
 
 #endif
