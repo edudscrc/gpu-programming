@@ -1,0 +1,8 @@
+CompileFlags:
+  Add:
+    - "-x"
+    - "hip"
+    - "-D__HIP_PLATFORM_AMD__"
+    - "-I/opt/rocm/include"
+    - "-I/opt/rocm/include/hip"
+  Compiler: /opt/rocm/bin/hipcc
