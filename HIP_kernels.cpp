@@ -1,5 +1,4 @@
 #include "HIP_kernels.h"
-#include "amd_detail/amd_hip_runtime.h"
 
 __global__
 void vector_add(const float *A, const float *B, float *C, const int n) {

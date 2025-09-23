@@ -1,7 +1,6 @@
 #ifndef HIP_KERNELS_H
 #define HIP_KERNELS_H
 
-#include <__clang_hip_runtime_wrapper.h>
 #include <hip/hip_runtime.h>
 
 __global__
